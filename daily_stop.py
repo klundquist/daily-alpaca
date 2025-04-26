@@ -5,10 +5,9 @@ from alpaca_trade_api.rest import REST, TimeFrame
 import os
 
 # -- credentials (export these in your shell or .bash_profile) --
-#API_KEY    = os.environ["ALPACA_KEY"]
-#API_SECRET = os.environ["ALPACA_SECRET"]
-API_KEY = 'PKUFN8ISSUV0H03YZOW8'
-API_SECRET = 'pWW27pR7LaXZ4L8zxOVq3DY3ngubnyDFbbCf2gov'
+API_KEY    = os.environ["ALPACA_KEY"]
+API_SECRET = os.environ["ALPACA_SECRET"]
+
 BASE_URL   = "https://paper-api.alpaca.markets"      # change if using live
 
 api = REST(API_KEY, API_SECRET, BASE_URL)
