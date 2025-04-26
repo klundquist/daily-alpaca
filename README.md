@@ -17,7 +17,7 @@ The job runs in a GitHub Actions runner—no VPS, EC2, or always‑on machine re
 ├─ requirements.txt         # Python deps (alpaca‑trade‑api)
 └─ .github
    └─ workflows
-      └─ daily.yml          # GitHub Actions schedule (00:00 São Paulo)
+      └─ daily.yml          # GitHub Actions schedule (00:00 GMT-3)
 ```
 
 ---
