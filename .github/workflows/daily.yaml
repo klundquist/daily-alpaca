@@ -1,0 +1,28 @@
+name: daily-stop-order
+
+on:
+  schedule:
+    # 3 AM UTC ≈ midnight São Paulo (UTC-3)
+    - cron:  '0 3 * * *'
+  workflow_dispatch:      # manual trigger button
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run daily_stop.py
+        env:
+          ALPACA_KEY:    ${{ secrets.ALPACA_KEY }}
+          ALPACA_SECRET: ${{ secrets.ALPACA_SECRET }}
+        run: python daily_stop.py
